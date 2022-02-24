@@ -1,0 +1,50 @@
+.kbli-wrap{
+    .col-form-label{
+        margin: 0;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
+    select.form-control{
+        font-size: 0.875rem;
+        border-color: #dee2e6;
+        padding: 10px 29px 10px 10px;
+        border-radius: 2px;
+    }
+    input.form-control{
+        padding: 10px;
+        border-color: #dee2e6;
+    }
+    .table{
+        margin: 30px 0;
+        border-bottom: 1px solid #dee2e6;
+        thead{
+            tr{
+                th{
+                    background-color: #E0E0E0;
+                    border-color: #dee2e6;
+                    border-bottom: 1px solid #dee2e6;
+                }
+            }
+        }
+        tbody{
+            tr{
+                td{
+                    border-color: #dee2e6;
+                }
+            }
+        }
+    }
+    .pagination{
+        li.page-item{
+            .page-link{
+                color: $t;
+            }
+            &.active{
+                .page-link{
+                    color: #FFF;
+                }
+            }
+        }
+    }
+}

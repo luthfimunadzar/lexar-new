@@ -1,0 +1,193 @@
+.article-wrap{
+    .article-item{
+        display: block;
+        color: $t;
+        padding: 25px 0 25px 120px;
+        // padding-left: 120px;
+        position: relative;
+        border-bottom: 1px solid #EEE;
+        .text-cat{
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 1;
+            color: $main;
+            margin-bottom: 0px;
+            font-size: 14px;
+            @media only screen and (max-width: 767.98px){
+                font-size: 12px;
+            }
+            span{
+                padding: 0 5px;
+                &:after{
+                    content: ",";
+                }
+                &:first-child{
+                    padding-left: 0px;
+                }
+                &:last-child{
+                    &:after{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .text-title{
+            font-family: $pl;
+            font-size: 30px;
+            margin-bottom: 0px;
+            @media only screen and (max-width: 767.98px){
+                font-size: 20px;
+            }
+        }
+        p{
+            margin-bottom: 7px;
+            font-size: 14px;
+            opacity: 1;
+            @media only screen and (max-width: 767.98px){
+                font-size: 13px;
+            }
+        }
+        .text-date{
+            opacity: 0.8;
+            font-size: 12px;
+        }
+        span.image{
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background-position: center center;
+        }
+        &:hover, &:focus{
+            text-decoration: none;
+        }
+    }
+    .side-title{
+        font-size: 20px;
+        padding-top: 25px;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #EEE;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    ul.side-link{
+        padding: 0;
+        li{
+            list-style: none;
+            a{
+                color: $t;
+                font-size: 15px;
+                display: block;
+                padding: 10px 0;
+                &:before{
+                    content: "\f101";
+                    font-family: "FontAwesome";
+                    transition: all 0.3s ease;
+                }
+                &:hover, &:focus{
+                    text-decoration: none;
+                    &:before{
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.article-detail-wrap{
+    margin-top: 130px;
+    margin-bottom: 60px;
+    .image{
+        display: block;
+        width: 100%;
+        height: 450px;
+        background-size: cover;
+        background-position: top center;
+        margin-bottom: 30px;
+        @media only screen and (max-width: 991.98px){
+            height: 300px;
+        }
+        @media only screen and (max-width: 767.98px){
+            height: 250px;
+        }
+    }
+    .text-cat{
+        float: left;
+        font-size: 18px;
+        text-transform: uppercase;
+        opacity: 1;
+        color: $main;
+        @media only screen and (max-width: 767.98px){
+            font-size: 16px;
+        }
+        span{
+            padding: 0 5px;
+            &:after{
+                content: ",";
+            }
+            &:first-child{
+                padding-left: 0px;
+            }
+            &:last-child{
+                &:after{
+                    display: none;
+                }
+            }
+        }
+    }
+    .text-date{
+        float: right;
+        font-size: 16px;
+        opacity: 0.7;
+        @media only screen and (max-width: 767.98px){
+            font-size: 14px;
+        }
+    }
+    .text-title{
+        font-size: 36px;
+        font-family: $pl;
+        margin-bottom: 20px;
+        @media only screen and (max-width: 767.98px){
+            font-size: 30px;
+        }
+    }
+    .text-content{
+        h6{
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 20px;
+            @media only screen and (max-width: 767.98px){
+                font-size: 18px;
+            }
+        }
+        p{
+            font-size: 16px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+            @media only screen and (max-width: 767.98px){
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+            a{
+                color: $main;
+            }
+        }
+        ul{
+            padding-left: 20px;
+            margin-bottom: 30px;
+            li{
+                font-size: 16px;
+                line-height: 1.9;
+                @media only screen and (max-width: 767.98px){
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

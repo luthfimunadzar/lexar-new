@@ -1,0 +1,347 @@
+.hero-business{
+    background-color: $sec;
+    height: 450px;
+    margin-top: 83px;
+    @media screen and (max-width: 767px){
+        text-align: center;
+    }
+    h3{
+        font-size: 44px;
+        color: $wt;
+        margin: 0;
+        font-family: 'Plantin';
+        @media screen and (max-width: 767px){
+            font-size: 36px;
+        }
+    }
+    h6{
+        font-size: 16px;
+        color: $wt;
+        margin: 8px 0 0 0;
+        @media screen and (max-width: 767px){
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+    }
+    .character{
+        width: 100%;
+        height: auto;
+        @media screen and (max-width: 767px){
+            width: 50%;
+        }
+    }
+}
+
+.business-desc{
+    padding: 80px 0;
+    @media screen and (max-width: 767px){
+        padding: 40px 0;
+    }
+    h3{
+        font-size: 30px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    p{
+        font-size: 18px;
+        line-height: 2;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    a{
+        font-size: 15px;
+        font-weight: 600;
+        color: $main;
+    }
+}
+
+.business-services{
+    padding: 80px 0 70px 0;
+    background-color: #e08f62;
+    @media screen and (max-width: 767px){
+        padding: 40px 0 35px 0;
+    }
+    .headline{
+        font-size: 26px;
+        font-weight: bold;
+        color: $t;
+        margin-bottom: 40px;
+        @media screen and (max-width: 767px){
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+    }
+    .ser-item{
+        border-radius: 5px;
+        padding: 20px;
+        min-height: 190px;
+        margin-bottom: 20px;
+        background-color: $wt;    
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+        transition: all 0.3s ease;
+        display: flex;
+        @media screen and (max-width: 991px){
+            margin-bottom: 20px;
+        }
+        @media screen and (max-width: 767px){
+            padding: 10px 15px;
+            min-height: 165px;
+        }
+        .wrap-flex{
+            width: 100%;
+        }
+        h5{
+            font-size: 18px;
+            font-weight: bold;
+            color: $t;
+            @media screen and (max-width: 767px){
+                font-size: 16px;
+            }
+        }
+        h6{
+            font-size: 14px;
+            color: $sec;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+        .price{
+            text-align: right;
+            margin: 0;
+            color: $main;
+            .currency{
+                display: inline-block;
+                vertical-align: top;
+                margin-top: 12px;
+                font-size: 13px;
+            }
+            .nominal{
+                display: inline-block;
+                font-size: 50px;
+                font-weight: bold;
+            }
+            .zero{
+                display: inline-block;
+                font-size: 13px;
+            }
+        }
+        &:hover, &:focus{
+            text-decoration: none;
+            margin-top: -5px;
+            margin-bottom: 5px;
+            box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2) !important;
+        }
+    }
+    .other-services{
+        margin-top: 30px;
+        font-size: 14px;
+        color: $t;
+        display: inline-block;
+        font-weight: 600;
+        position: relative;
+        padding: 10px 0;
+        @media screen and (max-width: 767px){
+            margin-top: 10px;
+        }
+        &:before{
+            content: "";
+            height: 1px;
+            background-color: $t;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 5px;
+            transition: all 0.3s ease;
+        }
+        &:hover, &:focus{
+            text-decoration: none;
+            &:before{
+                bottom: 34px;
+            }
+        }
+    }
+    &.sec{
+        background-color: #f2f1e7;
+    }
+}
+
+.business-testimoni{
+    padding: 80px 0;
+    @media screen and (max-width: 767px){
+        padding: 40px 0;
+    }
+    .head-title{
+        font-weight: bold;
+        font-size: 26px;
+        color: darken($main, 15%);
+        margin: 0;
+        @media screen and (max-width: 767px){
+            font-size: 22px;
+        }
+    }
+    .head-subtitle{
+        font-weight: 500;
+        font-size: 20px;
+        color: $sec;
+        @media screen and (max-width: 767px){
+            font-size: 16px;
+        }
+    }
+    .VueCarousel{
+        .VueCarousel-slide{
+            padding: 0 10px;
+            .wrap{
+                background-color: $wt;
+                border-radius: 4px;
+                box-shadow: 0 0.4rem 0.5rem rgba(0, 0, 0, 0.2) !important;
+                padding: 20px 25px;
+                margin: 5px 0 20px 0;
+                border: 1px solid #EEE;
+                @media screen and (max-width: 767px){
+                    padding: 10px 15px;
+                }
+                h5{
+                    font-weight: bold;
+                    color: $t
+                }
+                h6{
+                    margin-bottom: 15px;
+                    color: $main;
+                }
+                p{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .VueCarousel-navigation-prev{
+            font-size: 0;
+            top: 25%;
+            left: -10px;
+            @media screen and (max-width: 767px){
+                display: none;
+            }
+            &:before{
+                content: "\f104";
+                font-family: 'FontAwesome';
+                font-size: 60px;
+            }
+        }
+        .VueCarousel-navigation-next{
+            font-size: 0;
+            top: 25%;
+            right: -10px;;
+            @media screen and (max-width: 767px){
+                display: none;
+            }
+            &:before{
+                content: "\f105";
+                font-family: 'FontAwesome';
+                font-size: 60px;
+            }
+        }
+    }
+}
+
+.business-cta{
+    padding: 50px 0;
+    background-color: #f3f3f3;
+    @media screen and (max-width: 767px){
+        padding: 25px 0;
+        text-align: center;
+    }
+    img{
+        width: 100%;
+        @media screen and (max-width: 767px){
+            margin-top: 20px;
+        }
+    }
+    h5{
+        font-size: 30px;
+        color: $t;
+        margin: 15px 0;
+        font-weight: bold;
+        @media screen and (max-width: 767px){
+            font-size: 24px;
+        }
+    }
+}
+
+.business-article{
+    padding: 80px 0 60px 0;
+    background-color: #e08f62;
+    @media screen and (max-width: 767px){
+        padding: 40px 0 30px 0;
+    }
+    .headline{
+        font-size: 26px;
+        font-weight: bold;
+        color: #2D384A;
+        margin-bottom: 40px;
+        @media screen and (max-width: 767px){
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+    }
+    .art-item{
+        display: block;
+        background-color: $wt;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        box-shadow: 0 0.4rem 0.5rem rgba(0, 0, 0, 0.2) !important;
+        .image{
+            display: block;
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            border-bottom: 5px solid $sec;
+            position: relative;
+            @media screen and (max-width: 767px){
+                height: 150px;
+            }
+            &::before{
+                content: "\f08e";
+                font-size: 40px;
+                color: $wt;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'FontAwesome';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 0;
+                background-color: rgba($color: $sec, $alpha: 0.8);
+                transition: all 0.3s ease;
+            }
+        }
+        .text{
+            padding: 25px 20px;
+            .judul{
+                font-size: 18px;
+                font-weight: 700;
+                margin-bottom: 10px;
+                color: $t;
+                line-height: 1.5;
+            }
+            .desc{
+                height: 87px;
+                overflow: hidden;
+                p{
+                    font-size: 14px;
+                    line-height: 1.5;
+                    color: $t;
+                }
+            }
+        }
+        &:hover, &:focus{
+            text-decoration: none;
+            .image::before{
+                opacity: 1;
+            }
+        }
+    }
+}

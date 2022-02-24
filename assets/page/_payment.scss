@@ -1,0 +1,65 @@
+.payment-card{
+    width: 100%;
+    height: 200px;
+    border: 1px solid #DDD;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background-color: #FFF;
+    box-shadow: 0px 5px 5px 0px rgba($color: #000000, $alpha: 0.1);
+    color: $sec;
+    b{
+        display: block;
+        font-size: 30px;
+        font-weight: 700;
+    }
+    span{
+        display: block;
+        font-size: 18px;
+    }
+    &:hover, &:focus, &.chosen{
+        text-decoration: none;    
+        color: $main;
+        border-color: $main
+    }
+}
+
+.transaction-detail{
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px 0px rgba($color: #000000, $alpha: 0.1);
+    .card-body{
+        padding: 30px;
+        @media only screen and (max-width: 767.98px){
+            padding: 15px;
+        }
+        .btn{
+            width: 300px;
+            padding: 12px 30px;
+            border-radius: 10px;
+			@media only screen and (max-width: 767.98px){
+                width: 100% !important;
+                margin-top: 15px;
+			}
+        }
+    }
+}
+
+.voucher{
+    h6.title-voucher{
+        font-size: 14px;
+        font-weight: 500 !important;
+    }
+    .form-control{
+        border-color: #b6b6b6;
+        padding: 10px 16px;
+        text-transform: uppercase;
+    }
+    .result{
+        font-weight: 500;
+        font-size: 14px !important;
+    }
+}

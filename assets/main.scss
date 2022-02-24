@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'Plantin';
+  src: url('font/Plantin.eot?#iefix') format('embedded-opentype'),  
+       url('font/Plantin.woff') format('woff'), 
+       url('font/Plantin.ttf')  format('truetype'), 
+       url('font/Plantin.svg#Plantin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$t: #2D384A;
+$main: #BF855D;
+$sec: #3D5466;
+$ter: #CDA991;
+$wt: #FFFFFF;
+$bl: #000000; 
+$border: #E9EAEB;
+$pl: 'Plantin';
+
+html, body{
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  color: $t;
+  font-size: 14px;
+  font-weight: 400;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+
+// layout
+@import "layout/header";
+@import "layout/footer";
+
+// components
+@import "components/misc";
+@import "components/panel";
+@import "components/modal";
+@import "components/input";
+@import "components/button";
+@import '~/assets/calendar.sass';
+
+// page
+@import "page/home";
+@import "page/about";
+@import "page/service";
+@import "page/product";
+@import "page/contact";
+@import "page/careers";
+@import "page/article";
+
+// incorp
+@import "page/incorp";
+@import "page/plain";
+@import "page/needs";
+@import "page/prematrix";
+@import "page/requestorder";
+@import "page/setpassword";
+@import "page/dashboard";
+@import "page/preview-akta";
+@import "page/invoice";
+@import "page/schedulling";
+@import "page/login";
+@import "page/payment";
+@import "page/guide";
+@import "page/kbli";
+@import "page/business";
+@import "page/trademark";
+

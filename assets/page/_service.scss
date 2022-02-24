@@ -1,0 +1,284 @@
+.service-package{
+    border: 1px solid $border;
+    padding: 20px;
+    margin-bottom: 30px;
+    h3{
+        font-size: 24px;
+        font-family: $pl;
+        @media only screen and (max-width: 1199.98px){
+            font-size: 20px;
+        }
+    }
+    p{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 25px; 
+    }
+    .start{
+        font-size: 15px;
+        font-weight: 400;
+        margin-bottom: 25px;
+        transition: all 0.3s ease;
+        b{
+            color: $main;
+            font-size: 18px;
+        }
+        &.hide{
+            margin-bottom: 0px;
+            opacity: 0;
+            height: 0;
+        }
+    }
+    .price{
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+        border-bottom: 1px solid $border;
+        h5{
+            font-size: 14px;
+            line-height: 1.2;
+            font-weight: normal;
+            margin: 0 0 5px 0;
+            @media only screen and (max-width: 1199.98px){
+                font-size: 12px;
+            }
+        }
+        h6{
+            font-size: 12px;
+            font-weight: normal;
+            color: $ter;
+            margin: 0;
+            @media only screen and (max-width: 1199.98px){
+                font-size: 11px;
+            }
+        }
+        h4{
+            text-align: right;
+            color: $main;
+            margin: 0;
+            font-size: 35px;
+            font-weight: normal;
+            @media only screen and (max-width: 1199.98px){
+                font-size: 24px;
+            }
+            span{
+                display: inline-block;
+                font-size: 14px;
+                margin: 0 3px;
+                color: $t;
+                @media only screen and (max-width: 1199.98px){
+                    font-size: 11px;
+                }
+                &.top{
+                    vertical-align: top;
+                    margin-top: 5px;
+                }
+            }
+        }
+        &.no-border{
+            border-bottom: none;
+        }
+    }
+    .toggle-collapse{
+        span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        i{
+            font-size: 18px;
+            transition: all 0.2s ease;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 3px;
+        }
+        &.collapsed{
+            i{
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+// fundraise
+.fundraise{
+    padding: 60px 0;
+    background-color: $ter;
+    @media only screen and (max-width: 767.98px){
+        padding: 30px 0;
+    }
+    h5{
+        font-size: 30px;
+        color: $wt;
+        font-family: $pl;
+        margin-bottom: 5px;
+        @media only screen and (max-width: 991.98px){
+            font-size: 24px;
+        }
+    }
+    h6{
+        font-size: 18px;
+        margin: 0 0 10px 0;
+        color: $wt;
+        @media only screen and (max-width: 991.98px){
+            font-size: 14px;
+        }
+    }
+    .line{
+        display: inline-block;
+        width: 120px;
+        height: 2px;
+        background-color: $wt;
+        margin: 13px 0;
+        @media only screen and (max-width: 991.98px){
+            margin: 7px 0;
+        }
+    }
+    p{
+        font-size: 14px;
+        line-height: 1.5;
+        color: $wt;
+        margin-bottom: 20px;
+        @media only screen and (max-width: 991.98px){
+            margin-bottom: 10px;
+        }
+    }
+    .image-fund{
+        display: block;
+        width: 100%;
+        height: 270px;
+        background-size: cover;
+        background-position: center center;
+        @media only screen and (max-width: 767.98px){
+            margin-top: 20px;
+            height: 170px;
+        }
+    }
+    .btn-primary{
+        margin-left: 20px;
+        @media only screen and (max-width: 991.98px){
+            margin-left: 0;
+            margin-top: 10px;
+        }
+        @media only screen and (max-width: 767.98px){
+            margin-top: 0px;
+        }
+    }
+    .note{
+        display: block;
+        font-size: 12px;
+        color: $t;
+        margin-top: 15px;
+        img{
+            width: 88px;
+        }
+    }
+}
+
+// faq
+.faq{
+    .faq-title{
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .card-list{
+        margin-bottom: 30px;
+        .card{
+            margin: 0;
+            border-radius: 0;
+            .card-header{
+                padding: 0;
+                background-color: $wt;
+                border-bottom: none;
+                a{
+                    display: block;
+                    padding: 15px;
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: $t;
+                    img{
+                        float: right;
+                        transform: rotate(180deg);
+                        transition: all 0.3s ease;
+                    }
+                    &:hover, &:focus{
+                        text-decoration: none;
+                    }
+                    &.collapsed{
+                        img{
+                            transform: rotate(0deg);
+                        }
+                    }
+                }
+                &:first-child{
+                    border-radius: 0px;
+                }
+            }
+            .card-body{
+                padding: 10px 15px;
+                padding-top: 0px;
+                p{
+                    font-size: 12px;
+                    line-height: 1.5;
+                    margin-bottom: 7px;
+                    a{
+                        color: $main;
+                        transition: all 0.3s ease;
+                        &:hover, &:focus{
+                            text-decoration: none;
+                        }
+                    }
+                }
+                ul, ol{
+                    padding-left: 20px;
+                    margin-bottom: 7px;
+                    li{
+                        p{
+                            margin-bottom: 3px;
+                        }
+                    }
+                }
+                ol.lower-roman{
+                    list-style-type: lower-alpha;
+                }
+            }
+            & + .card{
+                border-top: none;
+            }
+        }
+    }
+}
+
+.faq-link{
+    padding: 100px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    &:before{
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($color: #3D5466, $alpha: 0.3);
+    }
+    .faq-text{
+        position: relative;
+        z-index: 2;
+        h3{
+            color: $wt;
+            font-size: 30px;
+        }
+        p{
+            color: $wt;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .btn{
+
+        }
+    }
+}

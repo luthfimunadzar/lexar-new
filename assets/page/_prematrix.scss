@@ -1,0 +1,209 @@
+.prematrix{    
+    padding: 60px 0;
+    width: 500px;
+    @media only screen and (max-width: 767.98px){
+        padding: 100px 30px 50px 30px;
+        width: auto;
+    }
+}
+
+.input-focus{
+    width: 500px;
+    border: none;
+    border-radius: 0px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px 0px rgba($color: #000000, $alpha: 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+    @media only screen and (max-width: 767.98px){
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .card-body{
+        padding: 30px;
+        @media only screen and (max-width: 767.98px){
+            padding: 15px;
+        }
+        label{
+            font-size: 16px;
+            font-weight: 600;
+            color: $t;
+            margin: 15px 0 5px 0;
+            display: block;
+        }
+        .custom-checkbox{
+            margin-bottom: 10px;
+            .custom-control-label{
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+        h5{
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        .back-link{
+            font-size: 12px;
+            position: absolute;
+            top: 33px;
+            right: 30px;
+            transition: all 0.3s ease;
+            img{
+                width: 15px;
+            }
+            &:hover, &:focus{
+                text-decoration: none;
+            }
+        }
+        .help-text{
+            h6{
+                font-size: 13px;
+                font-weight: 600;
+                margin-bottom: 10px;
+                display: none;
+            }
+            h5{
+                font-size: 15px;
+                font-weight: 500;
+            }
+            .ket{
+                display: block;
+                font-weight: 600;
+                opacity: 0.8;
+            }
+            p{
+                font-size: 14px;
+                opacity: 0.7;
+                line-height: 1.4;
+                margin-bottom: 10px;
+                strong{
+                    font-weight: 600;
+                }
+            }
+        }
+        .vo-info{
+            padding: 15px 20px;
+            border: 1px solid #BBB;
+            h5{
+                font-size: 14px;
+                margin-bottom: 0px;
+            }
+        }
+        .prefix-wrap{
+            position: relative;
+            .prefix{
+                position: absolute;
+                left: 0px;
+                top: 11px;
+                font-size: 18px;
+            }
+            .form-control.big{
+                padding-left: 30px;
+                border-radius: 0px;
+            }
+        }
+        .link-citiplan{
+            color: darken($main, 10%);
+            margin-bottom: 15px;
+            display: block;
+            transition: all 0.3s ease;
+            &:hover, &:focus{
+                text-decoration: none;
+                color: $main;
+            }
+        }
+        .link-back{
+            color: $bl;
+            text-decoration: none;
+            display: inline-block;
+            &:hover, &:focus{
+                text-decoration: underline;
+            }
+        }
+        .label-vo{
+            font-size: 14px;
+        }
+        .use-domisili{
+            font-size: 15px;
+            color: $main;
+            font-weight: 600;
+        }
+        .domisili-desc{
+            border: 1px solid $main;
+            padding: 10px 15px;
+            h5{
+                font-weight: 600;
+                color: $t;
+                font-size: 15px;
+                margin-bottom: 5px;
+            }
+            p{
+                font-size: 13px;
+                color: $t;
+                margin-bottom: 5px;
+            }
+            h6{
+                font-size: 16px;
+                font-weight: 600;
+                color: $main;
+                text-align: right;
+                .line-through{
+                    font-size: 13px;
+                    color: $t;
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+    &:focus, &:hover, &:focus-within{
+        border-color: $main;
+        .help-text{
+            display: block;
+        }
+
+    }
+}
+
+
+.loader-wrap{
+    position: fixed;
+    left: 170px;
+    top: 21px;
+    z-index: 99;
+    opacity: 0.7;
+    text-align: left;
+    @media only screen and (max-width: 767.98px){
+        left: 120px;
+        top: 20px;
+        opacity: 1;
+    }
+    span{
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 3px 0 0;
+        font-size: 15px;
+        font-weight: 400;
+        text-align: left;
+        @media only screen and (max-width: 767.98px){
+            font-size: 12px;
+            margin: 0;
+        }
+    }
+    .spinner-border{
+        display: inline-block;
+        vertical-align: middle;
+        width: 2em;
+        height: 2em;
+        border: 0.2em solid $main;
+        border-right-color: transparent;
+    }
+}
+
+.wrap-prematrix{
+    background-color: #f6f7fb;
+    padding-top: 83px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

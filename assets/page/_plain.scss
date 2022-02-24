@@ -1,0 +1,138 @@
+
+.plain-center{
+    position: relative;
+    background-color: #f6f7fb;
+    min-height: 100vh;
+}
+
+.head-plain{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    // background-color: rgba($color: $ter, $alpha: 0.9);
+    padding: 15px 40px;
+    z-index: 5;
+    @media only screen and (max-width: 767.98px){
+        padding: 15px;
+    }
+    .link-back{
+        float: left;
+        font-size: 18px;
+        color: $t;
+        font-weight: 500;
+        img{
+            width: 28px;
+            @media only screen and (max-width: 767.98px){
+                width: 20px;
+            }
+        }
+        &:hover, &:focus{
+            text-decoration: none;
+        }
+    }
+
+    .link-info{
+        float: left;
+        margin-left: 30px;
+        @media only screen and (max-width: 767.98px){
+            margin-left: 15px;
+        }
+        img{
+            width: 28px;
+            @media only screen and (max-width: 767.98px){
+                width: 20px;
+            }
+        }
+    }
+
+    .link-close{
+        float: right;
+        img{
+            width: 28px;
+            @media only screen and (max-width: 767.98px){
+                width: 20px;
+            }
+        }
+    }
+
+    .switcher-plain{
+        float: right;
+        margin-right: 30px;
+        @media only screen and (max-width: 767.98px){
+            margin-right: 15px;
+        }
+        a{
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 3px;
+            font-weight: 500;
+            color: $t;
+            font-size: 18px;
+            @media only screen and (max-width: 767.98px){
+                font-size: 14px;
+            }
+            &.nuxt-link-exact-active{
+                color: $main;
+            }
+            &:hover, &:focus{
+                text-decoration: none;
+            }
+        }
+    }
+
+    .progress-global{
+        position: absolute;
+        top: 25px;
+        left: 100px;
+        right: 200px;
+        height: 10px;
+        z-index: 9;
+        border-radius: 0px;
+        background-color: #DDD;
+        @media only screen and (max-width: 767.98px){
+            top: 24px;
+            left: 30px;
+            right: 160px;
+        }
+        .progress-bar{
+            background-color: $t;
+            font-size: 0;
+        }
+    }
+
+    .btn{
+        font-size: 12px;
+        padding: 5px 10px;
+        font-weight: 400;
+    }
+}
+
+.plain-logo{
+    width: 100px;
+    display: block;
+    margin: 0 auto 15px auto;
+    @media only screen and (max-width: 767.98px){
+        margin: 0 auto 10px auto;
+    }
+}
+
+.plain-title{
+    font-size: 20px;
+    line-height: 1.5;
+    color: $t;
+    text-align: center;
+    margin-bottom: 20px;
+    &.big{
+        font-size: 28px;
+        font-weight: 600;
+    }
+    @media only screen and (max-width: 767.98px){
+        font-size: 16px;
+    }
+}
+
+.plain-subtitle{
+    line-height: 1.6;
+}

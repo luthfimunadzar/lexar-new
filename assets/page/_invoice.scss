@@ -1,0 +1,54 @@
+.invoice{
+    margin-bottom: 50px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 5px 5px 0px rgba($color: #000000, $alpha: 0.1);
+    .small-logo{
+        width: 250px;
+        margin-bottom: 15px;
+    }
+    .card-body{
+        padding: 40px 30px;
+        @media only screen and (max-width: 767.98px){
+            padding: 20px 15px;
+        }
+        .logo-invoice{
+            width: 270px;
+            margin-bottom: 30px;
+            @media only screen and (max-width: 767.98px){
+              width: 180px;
+            }
+        }
+        h6{
+            font-weight: 500;
+            margin-bottom: 10px;
+            font-size: 16px;
+            @media only screen and (max-width: 767.98px){
+                font-size: 14px;
+            }
+        }
+        .table{
+            margin-top: 30px;
+            thead{
+                tr{
+                    th{
+                        background-color: #E0E0E0;
+                        border-color: #b6b6b6;
+                        border-bottom: 1px solid #b6b6b6;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    td{
+                        border-color: #b6b6b6;
+                    }
+                }
+            }
+        }
+    }
+    &.no-shadow{
+        border-radius: 0px;
+        box-shadow: none;
+    }
+}

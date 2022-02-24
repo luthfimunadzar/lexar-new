@@ -1,0 +1,37 @@
+.product{
+    .product-title{
+        text-align: center;
+        margin: 50px 0 30px 0;
+        font-size: 24px;
+        font-family: $pl;
+        @media screen and (max-width: 767.98px){
+            margin: 30px 0;
+        }
+    }
+    .product-item{
+        display: block;
+        padding: 15px;
+        border: 1px solid $border;
+        transition: all 0.3s ease;
+        @media screen and (max-width: 767.98px){
+            margin-bottom: 15px;
+        }
+        img{
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+            width: 40px;
+        }
+        span{
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 14px;
+            width: 68%;
+            color: $t;
+        }
+        &:hover, &:focus{
+            text-decoration: none;
+            background-color: $border;
+        }
+    }
+}

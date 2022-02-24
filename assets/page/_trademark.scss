@@ -1,0 +1,412 @@
+
+.wrap-radio{
+    .custom-radio{
+        display: inline-block;
+        margin-right: 15px;
+        .custom-control-label{
+            font-weight: normal;
+            margin-top: 5px;
+            font-size: 15px;
+            &:before{
+                top: 3px;
+            }
+            &:after{
+                top: 3px;
+            }
+        }
+    }
+    &.tambah-merek{
+        .custom-radio{
+            display: block;
+            margin-bottom: 5px;
+            .custom-control-label{
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.radio-pihak{
+    .custom-control-label{
+        font-size: 15px !important;
+        font-weight: normal !important;
+        &:before{
+            top: 3px;
+        }
+        &:after{
+            top: 3px;
+        }
+    }
+}
+
+.logo-wrap{
+    background-color: #F3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+    h6.tipe{
+        font-size: 14px;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+    img{
+        object-fit: cover;
+        height: 150px;
+    }
+    h3{
+        font-size: 32px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .opt{
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        a{
+            font-size: 16px;
+            display: inline-block;
+            margin-left: 10px;
+            color: $main;
+            transition: all 0.3s ease;
+            &:hover, &:focus{
+                color: $sec;
+            }
+        }
+    }
+}
+
+.add-merek{
+}
+
+.kelas-wrap{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #BBB;
+    .kelas-head{
+        margin-bottom: 10px;
+        .number{
+            border-radius: 50%;
+            background-color: $ter;
+            font-size: 14px;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            float: left;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-top: 2px;
+        }
+        h5{
+            float: left;
+            font-size: 16px;
+            margin: 0;
+            font-weight: 600;
+        }
+        .opt{
+            float: right;
+            a{
+                font-size: 16px;
+                display: inline-block;
+                color: $main;
+                margin-top: 3px;
+                transition: all 0.3s ease;
+                &:hover, &:focus{
+                    color: $sec;
+                }
+            }
+        }
+        &:after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+    }
+    .kelas-subtitle{
+        font-weight: 600;
+        font-size: 14px;
+        margin: 0 0 10px 0;
+        float: left;
+    }
+}
+
+.check-in-table{
+    .custom-control-label{
+        margin: 3px 0 0px 5px !important;
+    }
+}
+
+.delete-sub-kelas{
+    font-size: 17px;
+}
+
+.modal-merek{
+    .modal-header{
+        padding: 20px 30px 0px 30px !important;
+        .modal-title{
+            .intro{
+                display: block;
+                font-weight: bold;
+                font-size: 20px;
+            }
+            .introsub{
+                display: block;
+                font-size: 13px;
+            }
+        }
+    }
+    .modal-body{
+        padding: 20px 30px !important;
+        .label-modal{
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .label-tipe{
+            font-size: 13px;
+            padding-left: 26px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .img-cth{
+            width: auto;
+            height: 60px;
+            padding-left: 26px;
+            margin-bottom: 15px;
+        }
+        .text-cth{
+            font-size: 32px;
+            font-family: 'Times New Roman', Times, serif;
+            padding-left: 26px;
+            margin-top: -10px;
+            margin-bottom: 15px;
+        }
+        .upload-file-merek{
+            height: auto;
+            input{
+                height: 103px;
+            }
+            .custom-file-label{
+                text-align: center;
+                height: auto;
+                margin: 0;
+                padding: 60px 20px 20px 20px;
+                &:after{
+                    content: "\f093";
+                    font-family: 'FontAwesome';
+                    background-color: transparent;
+                    border: none;
+                    font-size: 34px;
+                    padding: 0;
+                    left: 50%;
+                    right: auto;
+                    top: 8px;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+        .table{
+            thead{
+                tr{
+                    th{
+                        font-size: 13px;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    td{
+                        font-size: 13px;
+                        .btn-small{
+                            font-size: 12px;
+                            width: auto;
+                            padding: 7px 15px;
+                            width: 85px;
+                        }
+                    }
+                }
+            }
+        }
+        .pratinjau{
+            img{
+                width: 200px;
+                margin-bottom: 15px;
+            }
+            h3{
+                font-size: 30px;
+                margin-bottom: 5px;
+            }
+            h6{
+                line-height: 1.5;
+                font-weight: normal;;
+            }
+        }
+    }
+}
+
+.label-value-merek{
+    margin: 0 0 20px 0 !important;
+    font-weight: normal !important;
+}
+
+.see-file{
+    margin: 0 0 20px 0 !important;
+    color: $main;
+    display: block;
+    font-size: 16px;
+}
+
+.etiket-pratinjau-wrap{
+    .tipe{
+        font-size: 14px;
+        margin: 0px 0 10px 0;
+    }
+    .wrap-value{
+        background-color: #f3f3f3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 200px;
+        margin-bottom: 15px;
+        h3{
+            margin-bottom: 0px;
+        }
+        img{
+            height: 70%;
+            object-fit: cover;
+        }
+    }
+}
+
+.perintah{
+    color: $main;
+}
+
+.kelas-pratinjau-wrap{
+    margin-bottom: 15px;
+    .custom-checkbox{
+        .custom-control-label{
+            margin-top: 0 !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            margin-bottom: 5px !important;
+            &:before, &:after{
+                top: 4px;
+            }
+        }
+    }
+    .kelas-desc{
+        padding-left: 26px;
+    }
+    ol{
+        padding-left: 40px;
+        margin: 0;
+        li{
+            margin-bottom: 7px;
+        }
+    }
+}
+
+.table-etiket{
+    tr{
+        td{
+            padding: 20px 10px;
+            .img-merek{
+                width: 70%;
+            }
+        }
+    }
+}
+
+.has-border-right{
+    border-right: 1px solid #BBB;
+}
+
+.simulasi-wrap{
+    padding: 15px;
+    border: 1px solid $main;
+    h5{
+        font-weight: 600;
+        font-size: 22px !important;
+        margin-bottom: 0px;
+        .line-through{
+            text-decoration: line-through;
+            font-size: 17px;
+        }
+    }
+    h6{
+        margin-bottom: 20px;
+    }
+    h3{
+        font-size: 30px !important;
+        font-weight: 700;
+        color: $main;
+    }
+    .kali{
+        position: absolute;
+        top: 11px;
+        left: -13px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+}
+
+.divider-trademark{
+    border-top-color: #BBB;
+    margin-bottom: 2rem;
+}
+
+.table-pratinjau{
+    thead{
+        tr{
+            th{
+                vertical-align: middle;
+                font-weight: 500;
+                .small{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    tbody{
+        tr{
+            td{
+                h3{
+                    font-family: 'Times New Roman', Times, serif;
+                    font-size: 24px;
+                }
+                img{
+                    width: 100px;
+                }
+            }
+        }
+    }
+}
+
+.message-input{
+    margin: -15px 0 15px 0;
+    display: block;
+    a{
+        color: $main;
+    }
+}
+
+.btn-upload{
+    font-size: 14px !important;
+    padding: 10px !important;
+}
+
+.loading-modal{
+    b, .spinner-grow{
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.validator-upload{
+    margin-top: -15px;
+}
