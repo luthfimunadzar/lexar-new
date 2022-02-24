@@ -4,6 +4,7 @@ tls.DEFAULT_ECDH_CURVE = 'auto'
 require('dotenv').config()
 
 module.exports = {
+  target: 'static',
   /*
    ** Headers of the page
    */

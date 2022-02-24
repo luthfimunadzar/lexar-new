@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <div class="wrap-prematrix">
-            <!-- <div class="head-plain">
+  <div>
+    <div class="wrap-prematrix">
+      <!-- <div class="head-plain">
                 <nuxt-link :to="localePath('incorporation-start')" class="link-back"><img src="/lexar/back.png" alt=""></nuxt-link>
                 
                 <div class="switcher-plain mr-0">
@@ -12,111 +12,173 @@
                 <nuxt-link v-else class="btn btn-secondary mr-3 float-right" :to="localePath('login') + '?incorp=true'">Login</nuxt-link>
             </div> -->
 
-            <div class="request-order d-flex justify-content-center">
-                <div>
-                    <h5 class="plain-title big mb-2" v-html="$t('orderTitle')"></h5>
-                    <h6 class="plain-subtitle mb-4 text-center">{{ $t('orderSubtitle') }}</h6>
+      <div class="request-order d-flex justify-content-center">
+        <div>
+          <h5 class="plain-title big mb-2" v-html="$t('orderTitle')"></h5>
+          <h6 class="plain-subtitle mb-4 text-center">
+            {{ $t("orderSubtitle") }}
+          </h6>
 
-                    <b-card>
-                        <div class="section">
-                            <h5 class="section-pt" v-if="dataPrematrix"><b>{{ dataPrematrix.nama_perseroan }}</b></h5>
-                            <p class="alamat-pt" v-if="dataPrematrix">{{ dataPrematrix.alamat }} </p>
-                        </div>
-
-                        <div class="section">
-                            <h5 class="section-pt"><b>{{ $t('ordersectionPT1') }}</b></h5>
-                            <ul class="get-item">
-                                <li>
-                                    <img src="/lexar/checked.png" alt="">
-                                    <p v-html="$t('getItem1PT')"></p>
-                                </li>
-                                <li>
-                                    <img src="/lexar/checked.png" alt="">
-                                    <p v-html="$t('getItem2PT')"></p>
-                                </li>
-                                <li>
-                                    <img src="/lexar/checked.png" alt="">
-                                    <p v-if="this.$i18n.locale === 'en'">Single Business Number (<span class="info no-icon" v-b-tooltip.hover :title="$t('niboss')">NIB OSS</span>)*;</p>
-                                    <p v-else>Nomor Induk Berusaha (<span class="info no-icon" v-b-tooltip.hover :title="$t('niboss')">NIB OSS</span>)*;</p>
-                                </li>
-                                <li>
-                                    <img src="/lexar/checked.png" alt="">
-                                    <p v-html="$t('getItem4PT')"></p>
-                                </li>
-                                <li>
-                                    <img src="/lexar/checked.png" alt="">
-                                    <p v-html="$t('getItem5PT')"></p>
-                                </li>
-                            </ul>
-
-                            <span class="notes" v-if="this.$i18n.locale === 'en'">* Not including <span class="info no-icon" v-b-tooltip.hover :title="$t('commit')">commitment</span> fulfillment</span>
-                            <span class="notes" v-else>* Tidak termasuk <span class="info no-icon" v-b-tooltip.hover :title="$t('commit')">Komitmen</span> Pemenuhan</span>
-                        </div>
-
-                        <div class="section">
-                            <h5 class="section-pt"><b>{{ $t('ordersectionPT2') }}</b></h5>
-                            <h4 class="highlight mb-5">
-                                {{ $t('timelinePT') }}
-                            </h4>
-
-                            <h5 class="section-pt"><b>{{ $t('ordersectionPT3') }}</b></h5>
-                            <ul class="step mb-5">
-                                <li class="active"><span class="dots">1</span> {{ $t('step1PT') }}</li>
-                                <li><span class="dots">2</span> {{ $t('step2PT') }}</li>
-                                <li><span class="dots">3</span> {{ $t('step3PT') }}</li>
-                                <li><span class="dots">4</span> {{ $t('step4PT') }}</li>
-                                <li><span class="dots">5</span> {{ $t('step5PT') }}</li>
-                                <li><span class="dots">6</span> {{ $t('step6PT') }}</li>
-                                <li><span class="dots">7</span> {{ $t('step7PT') }}</li>
-                                <li><span class="dots">8</span> {{ $t('step8PT') }}</li>
-                            </ul>
-
-                            <h5 class="section-pt"><b>{{ $t('ordersectionPT4') }}</b></h5>
-                            <h4 class="highlight">
-                                <!-- {{ $t('feePT') }} -->
-                                Rp. 7.650.000 <span class="line">Rp. 9.000.000</span>
-                            </h4>
-
-                            <span class="notes" v-html="$t('feeNotePT')"></span>
-
-                            <div class="clearfix"></div>
-                            <button class="btn btn-outline-primary btn-sm mt-3 d-none">{{ $t('shareOrder') }}</button>
-
-                        </div>
-
-                        <div class="section no-border">
-                            <button class="btn btn-secondary big mb-3 float-right w-25" v-b-modal.modal-email :disabled="!tncAgreed">{{ $t('proceed') }}</button>
-                            <button class="btn btn-outline-primary mb-3 float-right mr-4 mt-1" @click="showTawk">{{ $t('haveQuestion') }}</button>
-
-                            <div class="clearfix"></div>
-                            <span class="notes" v-if="this.$i18n.locale === 'en'">
-                                <b-form-checkbox
-                                id="checkbox-tnc"
-                                v-model="tncAgreed"
-                                name="checkbox-tnc"
-                                >
-                                by checking, I agree to the <b-link v-b-modal.modal-tnc>terms and conditions</b-link>
-                                </b-form-checkbox> 
-                            </span>
-                            <span class="notes" v-else>
-                                <b-form-checkbox
-                                id="checkbox-tnc"
-                                v-model="tncAgreed"
-                                name="checkbox-tnc"
-                                >
-                                Dengan mengecek, saya menyetujui <b-link v-b-modal.modal-tnc>syarat dan ketentuan</b-link>
-                                </b-form-checkbox> 
-                            </span>
-                        </div>
-                    </b-card>
-                    <h6 class="note-saved mt-4 text-center">
-                        {{ $t('changes') }}
-                    </h6>
-                </div>
+          <b-card>
+            <div class="section">
+              <h5 class="section-pt" v-if="dataPrematrix">
+                <b>{{ dataPrematrix.nama_perseroan }}</b>
+              </h5>
+              <p class="alamat-pt" v-if="dataPrematrix">
+                {{ dataPrematrix.alamat }}
+              </p>
             </div>
-        </div>
 
-        <b-modal id="modal-tnc" hide-footer size="lg">
+            <div class="section">
+              <h5 class="section-pt">
+                <b>{{ $t("ordersectionPT1") }}</b>
+              </h5>
+              <ul class="get-item">
+                <li>
+                  <img src="/lexar/checked.png" alt="" />
+                  <p v-html="$t('getItem1PT')"></p>
+                </li>
+                <li>
+                  <img src="/lexar/checked.png" alt="" />
+                  <p v-html="$t('getItem2PT')"></p>
+                </li>
+                <li>
+                  <img src="/lexar/checked.png" alt="" />
+                  <p v-if="this.$i18n.locale === 'en'">
+                    Single Business Number (<span
+                      class="info no-icon"
+                      v-b-tooltip.hover
+                      :title="$t('niboss')"
+                      >NIB OSS</span
+                    >)*;
+                  </p>
+                  <p v-else>
+                    Nomor Induk Berusaha (<span
+                      class="info no-icon"
+                      v-b-tooltip.hover
+                      :title="$t('niboss')"
+                      >NIB OSS</span
+                    >)*;
+                  </p>
+                </li>
+                <li>
+                  <img src="/lexar/checked.png" alt="" />
+                  <p v-html="$t('getItem4PT')"></p>
+                </li>
+                <li>
+                  <img src="/lexar/checked.png" alt="" />
+                  <p v-html="$t('getItem5PT')"></p>
+                </li>
+              </ul>
+
+              <span class="notes" v-if="this.$i18n.locale === 'en'"
+                >* Not including
+                <span
+                  class="info no-icon"
+                  v-b-tooltip.hover
+                  :title="$t('commit')"
+                  >commitment</span
+                >
+                fulfillment</span
+              >
+              <span class="notes" v-else
+                >* Tidak termasuk
+                <span
+                  class="info no-icon"
+                  v-b-tooltip.hover
+                  :title="$t('commit')"
+                  >Komitmen</span
+                >
+                Pemenuhan</span
+              >
+            </div>
+
+            <div class="section">
+              <h5 class="section-pt">
+                <b>{{ $t("ordersectionPT2") }}</b>
+              </h5>
+              <h4 class="highlight mb-5">
+                {{ $t("timelinePT") }}
+              </h4>
+
+              <h5 class="section-pt">
+                <b>{{ $t("ordersectionPT3") }}</b>
+              </h5>
+              <ul class="step mb-5">
+                <li class="active">
+                  <span class="dots">1</span> {{ $t("step1PT") }}
+                </li>
+                <li><span class="dots">2</span> {{ $t("step2PT") }}</li>
+                <li><span class="dots">3</span> {{ $t("step3PT") }}</li>
+                <li><span class="dots">4</span> {{ $t("step4PT") }}</li>
+                <li><span class="dots">5</span> {{ $t("step5PT") }}</li>
+                <li><span class="dots">6</span> {{ $t("step6PT") }}</li>
+                <li><span class="dots">7</span> {{ $t("step7PT") }}</li>
+                <li><span class="dots">8</span> {{ $t("step8PT") }}</li>
+              </ul>
+
+              <h5 class="section-pt">
+                <b>{{ $t("ordersectionPT4") }}</b>
+              </h5>
+              <h4 class="highlight">
+                <!-- {{ $t('feePT') }} -->
+                Rp. 7.650.000 <span class="line">Rp. 9.000.000</span>
+              </h4>
+
+              <span class="notes" v-html="$t('feeNotePT')"></span>
+
+              <div class="clearfix"></div>
+              <button class="btn btn-outline-primary btn-sm mt-3 d-none">
+                {{ $t("shareOrder") }}
+              </button>
+            </div>
+
+            <div class="section no-border">
+              <button
+                class="btn btn-secondary big mb-3 float-right w-25"
+                v-b-modal.modal-email
+                :disabled="!tncAgreed"
+              >
+                {{ $t("proceed") }}
+              </button>
+              <button
+                class="btn btn-outline-primary mb-3 float-right mr-4 mt-1"
+                @click="showTawk"
+              >
+                {{ $t("haveQuestion") }}
+              </button>
+
+              <div class="clearfix"></div>
+              <span class="notes" v-if="this.$i18n.locale === 'en'">
+                <b-form-checkbox
+                  id="checkbox-tnc"
+                  v-model="tncAgreed"
+                  name="checkbox-tnc"
+                >
+                  by checking, I agree to the
+                  <b-link v-b-modal.modal-tnc>terms and conditions</b-link>
+                </b-form-checkbox>
+              </span>
+              <span class="notes" v-else>
+                <b-form-checkbox
+                  id="checkbox-tnc"
+                  v-model="tncAgreed"
+                  name="checkbox-tnc"
+                >
+                  Dengan mengecek, saya menyetujui
+                  <b-link v-b-modal.modal-tnc>syarat dan ketentuan</b-link>
+                </b-form-checkbox>
+              </span>
+            </div>
+          </b-card>
+          <h6 class="note-saved mt-4 text-center">
+            {{ $t("changes") }}
+          </h6>
+        </div>
+      </div>
+    </div>
+
+    <!-- <b-modal id="modal-tnc" hide-footer size="lg">
             <div class="tnc-wrap">
                 <div class="tnc-overflow">
                     <p style="text-align: justify;">
@@ -271,9 +333,9 @@
                     </p>        
                 </div>
             </div>
-        </b-modal>
+        </b-modal> -->
 
-        <b-modal id="modal-email" hide-footer class="text-center">
+    <!-- <b-modal id="modal-email" hide-footer class="text-center">
             <div class="text-center">
                 <h2 class="font-weight-bold mb-4">{{ $t('popThanks') }}</h2>
                 <p class="email-text" v-if="!this.$route.query.login">{{ $t('popParagraph1') }} <br/> <b>{{ this.$auth.user.data.email }}</b></p>
@@ -283,58 +345,65 @@
 
                 <nuxt-link :to="localePath('dashboard')" class="btn btn-secondary float-right w-100 rounded">{{ $t('proceed') }}</nuxt-link>
             </div>
-        </b-modal>
-    </div>
+        </b-modal> -->
+  </div>
 </template>
 
 <script>
 export default {
-    layout: "default",
-    data() {
-        return {
-        nilai: 20,
-        max: 100,
-        userIncorp: null,
-        dataPrematrix: {},
-        verifyEmail: "",
-        tncAgreed: false,
-        user: {
-            name: 'user name',
-            email: 'user email',
-        }
-        };
-    },
-    head () {
-        return {
-            title: 'Request Order | LEXAR',
-            meta: [
-                // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-                { hid: 'description', name: 'description', content: 'Request Order Page' },
-                { hid: 'og:title', name: 'og:title', content: 'Request Order | LEXAR' },
-                { hid: 'og:description', name: 'og:description', content: 'Request Order Page' },
-            ]
-        }
-    },
+  layout: "default",
+  data() {
+    return {
+      nilai: 20,
+      max: 100,
+      userIncorp: null,
+      dataPrematrix: {},
+      verifyEmail: "",
+      tncAgreed: false,
+      user: {
+        name: "user name",
+        email: "user email",
+      },
+    };
+  },
+  head() {
+    return {
+      title: "Request Order | LEXAR",
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "description",
+          name: "description",
+          content: "Request Order Page",
+        },
+        { hid: "og:title", name: "og:title", content: "Request Order | LEXAR" },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: "Request Order Page",
+        },
+      ],
+    };
+  },
   created() {
-    this.userIncorp = this.$store.state.incorp.userIncorp;
-    this.dataPrematrix = this.$store.state.incorp.dataPrematrix;
-    
-    console.log(this.$route.query.login);
+    // this.userIncorp = this.$store.state.incorp.userIncorp;
+    // this.dataPrematrix = this.$store.state.incorp.dataPrematrix;
+    // console.log(this.$route.query.login);
   },
   methods: {
     async logout() {
-        await this.$auth.logout();
-        this.$router.replace('/');
+      await this.$auth.logout();
+      this.$router.replace("/");
     },
-    agreeTnc(){
-        this.tncAgreed = true;
-        this.$bvModal.hide('modal-tnc');
+    agreeTnc() {
+      this.tncAgreed = true;
+      this.$bvModal.hide("modal-tnc");
     },
-    showTawk(){
-        if(process.client){
-            Tawk_API.maximize();
-        }
-    }
-  }
+    showTawk() {
+      if (process.client) {
+        Tawk_API.maximize();
+      }
+    },
+  },
 };
 </script>

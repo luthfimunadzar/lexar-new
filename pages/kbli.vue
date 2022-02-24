@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <!-- Hero Inner -->
-        <div class="inner-hero" style="background-image: url('/lexar/usaha.jpg'); background-position: center center;">
+  <div>
+    <!-- Hero Inner -->
+    <!-- <div class="inner-hero" style="background-image: url('/lexar/usaha.jpg'); background-position: center center;">
             <b-container>
                 <b-row>
                     <b-col>
@@ -76,77 +76,91 @@
                     </b-col>
                 </b-row>
             </b-container>
-        </div>
-    </div>
+        </div> -->
+  </div>
 </template>
 
 <script>
 export default {
-    async asyncData ({ app }) {
-        let tempKbli = await app.$matrix.getKbli();
-        return { 
-            dataKbli: tempKbli.data 
-        }
+  // async asyncData ({ app }) {
+  //     let tempKbli = await app.$matrix.getKbli();
+  //     return {
+  //         dataKbli: tempKbli.data
+  //     }
+  // },
+  data() {
+    return {
+      dataKbli: {},
+      fieldTable: [
+        { key: "code", label: "Kode", sortable: false },
+        { key: "title", label: "Judul", sortable: true },
+        { key: "detail", label: "Uraian", sortable: true },
+      ],
+      totalRows: 1,
+      currentPage: 1,
+      perPage: 20,
+      sortBy: "",
+      sortDesc: false,
+      sortDirection: "asc",
+      searchInput: "",
+      searchBy: "judul",
+      filter: null,
+      showSpinner: false,
+    };
+  },
+  mounted() {
+    // Set the initial number of items
+    //   this.totalRows = this.dataKbli.length
+  },
+  methods: {
+    onFiltered(filteredItems) {
+      // Trigger pagination to update the number of buttons/pages due to filtering
+      this.totalRows = filteredItems.length;
+      this.currentPage = 1;
     },
-    data() {
-        return {
-            dataKbli: {},
-            fieldTable: [
-                {key: 'code', label: 'Kode', sortable: false},
-                {key: 'title', label: 'Judul', sortable: true},
-                {key: 'detail', label: 'Uraian', sortable: true},
-            ],
-            totalRows: 1,
-            currentPage: 1,
-            perPage: 20,
-            sortBy: '',
-            sortDesc: false,
-            sortDirection: 'asc',
-            searchInput: '',
-            searchBy: 'judul',
-            filter: null,
-            showSpinner: false,
-        }
-    },
-    mounted() {
-      // Set the initial number of items
-      this.totalRows = this.dataKbli.length
-    },
-    methods:{ 
-      onFiltered(filteredItems) {
-        // Trigger pagination to update the number of buttons/pages due to filtering
-        this.totalRows = filteredItems.length
-        this.currentPage = 1
-      },
-      async search(params){      
-        this.showSpinner = true;
+    async search(params) {
+      this.showSpinner = true;
 
-        let tempKbli = null;
-        if(this.searchBy === 'judul'){
-            tempKbli = await this.$matrix.searchKbli(params);
-            this.dataKbli = tempKbli.data;
-        } else {
-            tempKbli = await this.$matrix.searchKbliByCode(params);
+      let tempKbli = null;
+      if (this.searchBy === "judul") {
+        tempKbli = await this.$matrix.searchKbli(params);
+        this.dataKbli = tempKbli.data;
+      } else {
+        tempKbli = await this.$matrix.searchKbliByCode(params);
 
-            this.dataKbli = this.isArray(tempKbli.data) ? tempKbli.data : [tempKbli.data];
-        }
+        this.dataKbli = this.isArray(tempKbli.data)
+          ? tempKbli.data
+          : [tempKbli.data];
+      }
 
-        this.showSpinner = false;
-      },    
-        isArray (value) {
-            return value && typeof value === 'object' && value.constructor === Array;
-        }
+      this.showSpinner = false;
     },
-    head () {
-        return {
-            title: 'Klasifikasi Baku Lapangan Usaha Indonesia | LEXAR',
-            meta: [
-                // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-                { hid: 'description', name: 'description', content: 'Klasifikasi Baku Lapangan Usaha Indonesia.' },
-                { hid: 'og:title', name: 'og:title', content: 'Klasifikasi Baku Lapangan Usaha Indonesia | LEXAR' },
-                { hid: 'og:description', name: 'og:description', content: 'Klasifikasi Baku Lapangan Usaha Indonesia.' },
-            ]
-        }
+    isArray(value) {
+      return value && typeof value === "object" && value.constructor === Array;
     },
-}
+  },
+  head() {
+    return {
+      title: "Klasifikasi Baku Lapangan Usaha Indonesia | LEXAR",
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "description",
+          name: "description",
+          content: "Klasifikasi Baku Lapangan Usaha Indonesia.",
+        },
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: "Klasifikasi Baku Lapangan Usaha Indonesia | LEXAR",
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: "Klasifikasi Baku Lapangan Usaha Indonesia.",
+        },
+      ],
+    };
+  },
+};
 </script>

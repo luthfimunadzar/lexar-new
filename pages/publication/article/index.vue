@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <!-- Hero Inner -->
+  <div>
+    <!-- Hero Inner
         <div class="inner-hero" style="background-image: url('/lexar/blog-bg.jpg'); background-position: center center;">
             <b-container>
                 <b-row>
@@ -55,33 +55,30 @@
                     </b-col>
                 </b-row>
             </b-container>
-        </div>
-
-    </div>
+        </div> -->
+  </div>
 </template>
 
 <script>
 export default {
-    async asyncData({app}){
-        const tempArticle = await app.$publication.getArticle();
-        const tempCategory = await app.$publication.getCat();
+  // async asyncData({app}){
+  //     const tempArticle = await app.$publication.getArticle();
+  //     const tempCategory = await app.$publication.getCat();
 
-        return{
-            dataArticle: tempArticle.data,
-            dataCat: tempCategory.data,
-        }
-    },
-    data() {
-        return {
-            dataArticle: {},
-            dataCat: {},
-            nameCat: [],
-            perPage: 3,
-            currentPage: 1,
-        }
-    },
-    created() {
-        
-    }
-}
+  //     return{
+  //         dataArticle: tempArticle.data,
+  //         dataCat: tempCategory.data,
+  //     }
+  // },
+  data() {
+    return {
+      dataArticle: {},
+      dataCat: {},
+      nameCat: [],
+      perPage: 3,
+      currentPage: 1,
+    };
+  },
+  created() {},
+};
 </script>

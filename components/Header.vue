@@ -10,18 +10,16 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
-            <li class="nav-item b-nav-dropdown dropdown megamenu">
+            <li class="nav-item b-nav-dropdown dropdown megamenu d-none">
               <!-- <a aria-haspopup="true" aria-expanded="false" target="_self" href="javascript:void(0);" data-toggle="dropdown" class="nav-link dropdown-toggle" id="megamenu-toggle">{{ $t('tservice') }}</a> -->
+              <!-- <b-link class="nav-link dropdown-toggle" href="/service">{{
+                $t("tservice")
+              }}</b-link>
               <b-link
-                class="nav-link dropdown-toggle hide-sm"
-                href="/service"
-                >{{ $t("tservice") }}</b-link
-              >
-              <b-link
-                class="nav-link dropdown-toggle show-sm"
+                class="nav-link dropdown-toggle hidden"
                 v-b-modal="'modal-mega-menu'"
                 >{{ $t("tservice") }}</b-link
-              >
+              > -->
               <div
                 aria-labelledby="megamenu"
                 class="dropdown-menu border-0 p-0 m-0"
@@ -30,7 +28,7 @@
                   <div
                     class="row bg-white rounded-0 m-0 shadow-sm wrap-mega no-gutters"
                   >
-                    <div class="col-lg-4">
+                    <!-- <div class="col-lg-4">
                       <div class="wrap-cat online">
                         <div class="row">
                           <div class="col-lg-12">
@@ -56,8 +54,8 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="col-lg-4">
+                    </div> -->
+                    <!-- <div class="col-lg-12">
                       <div class="wrap-cat">
                         <div class="row">
                           <div class="col-lg-12">
@@ -189,8 +187,8 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="col-lg-4">
+                    </div> -->
+                    <!-- <div class="col-lg-4">
                       <div class="wrap-cat industry">
                         <div class="row">
                           <div class="col-lg-12">
@@ -276,22 +274,23 @@
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
             </li>
             <!-- <b-nav-item :to="localePath('service')">{{ $t('tservice') }}</b-nav-item> -->
             <!-- <b-nav-item :to="localePath('about')">{{ $t('tabout') }}</b-nav-item> -->
+            <b-nav-item to="/service">{{ $t("tservice") }} </b-nav-item>
             <b-nav-item-dropdown :text="$t('tcompany')" right>
               <b-dropdown-item :to="localePath('about')">{{
                 $t("tabout")
               }}</b-dropdown-item>
-              <b-dropdown-item
+              <!-- <b-dropdown-item
                 href="https://article.lexar.id"
                 target="_blank"
                 >{{ $t("tarticle") }}</b-dropdown-item
-              >
+              > -->
               <b-dropdown-item :to="localePath('careers')">{{
                 $t("tcareers")
               }}</b-dropdown-item>

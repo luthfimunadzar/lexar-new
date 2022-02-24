@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="login-wrap">
+  <div>
+    <!-- <div class="login-wrap">
             <div class="login-form">    
                 <h4>{{ $t('registerTitle') }}</h4>
 
@@ -86,91 +86,95 @@
                 </form>
             </div>
 
-        </div>
-    </div>
+        </div> -->
+  </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return{
-            form:{
-                name: "",
-                email: "",
-                password: "",
-                c_password: "",
-                via: "website",
+  data() {
+    return {
+      form: {
+        name: "",
+        email: "",
+        password: "",
+        c_password: "",
+        via: "website",
+      },
+      tempEmail: "",
+      anyError: false,
+      logging: false,
+      errorMessage: "",
+      showAlert: false,
+      status: {
+        authenticated: false,
+      },
+      emailAvailable: {},
+    };
+  },
+  head() {
+    return {
+      title: "Register | LEXAR",
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { hid: "description", name: "description", content: "Register Page" },
+        { hid: "og:title", name: "og:title", content: "Register | LEXAR" },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: "Register Page",
+        },
+      ],
+    };
+  },
+  watch: {
+    "form.email": function (oldEmail, newEmail) {
+      this.debouncedGetEmail();
+    },
+  },
+  created() {
+    // this.debouncedGetEmail = _.debounce(this.getEmail, 100)
+  },
+  methods: {
+    async getEmail(params) {
+      let tempEmail = await this.$matrix.checkEmail({
+        email: this.form.email,
+      });
+
+      this.emailAvailable = tempEmail.meta;
+    },
+    async onSubmit(evt) {
+      const validated = await this.$validator.validateAll();
+      if (validated && this.emailAvailable.message === "Available") {
+        try {
+          this.logging = true;
+          console.log(JSON.stringify(this.form));
+          await this.$user.register(this.form);
+          this.status.authenticated = true;
+          await this.$auth.loginWith("password", {
+            data: {
+              username: this.form.email,
+              password: this.form.password,
             },
-            tempEmail: "",
-            anyError: false,
-            logging: false,
-            errorMessage: "",
-            showAlert: false,
-            status: {
-                authenticated: false
-            },
-            emailAvailable: {}
+          });
+          // this.tempEmail = this.form.email
+
+          // this.showAlert = true
+          // this.form.name = ""
+          // this.form.email = ""
+          // this.form.password = ""
+          // this.form.c_password = ""
+          // this.$validator.reset()
+
+          this.$router.replace("/dashboard");
+        } catch (error) {
+          console.log(error);
+          this.logging = false;
+          // this.anyError = true;
+          this.$toast.error(error.response.data.message).goAway(3000);
         }
+      }
     },
-    head () {
-        return {
-            title: 'Register | LEXAR',
-            meta: [
-                // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-                { hid: 'description', name: 'description', content: 'Register Page' },
-                { hid: 'og:title', name: 'og:title', content: 'Register | LEXAR' },
-                { hid: 'og:description', name: 'og:description', content: 'Register Page' },
-            ]
-        }
-    },
-    watch: {
-        'form.email': function(oldEmail, newEmail){
-            this.debouncedGetEmail();
-        },
-    },
-    created(){
-        this.debouncedGetEmail = _.debounce(this.getEmail, 100)
-    },
-    methods: {
-        async getEmail(params){
-            let tempEmail = await this.$matrix.checkEmail({
-                email : this.form.email
-            });
-
-            this.emailAvailable = tempEmail.meta;
-        },
-        async onSubmit(evt) {
-            const validated = await this.$validator.validateAll();
-            if(validated && this.emailAvailable.message === "Available") {
-                try {
-                    this.logging = true;
-                    console.log(JSON.stringify(this.form))
-                    await this.$user.register(this.form)
-                    this.status.authenticated = true;
-                    await this.$auth.loginWith('password', {
-                        data: {
-                            username: this.form.email,
-                            password: this.form.password
-                        }
-                    });
-                    // this.tempEmail = this.form.email
-
-                    // this.showAlert = true
-                    // this.form.name = ""
-                    // this.form.email = ""
-                    // this.form.password = ""
-                    // this.form.c_password = ""
-                    // this.$validator.reset()
-
-                    this.$router.replace('/dashboard');
-                } catch (error) {
-                    console.log(error)
-                    this.logging = false;
-                    // this.anyError = true;
-                    this.$toast.error(error.response.data.message).goAway(3000);
-                }
-            }
-        },
-    }
-}
+  },
+};
 </script>
