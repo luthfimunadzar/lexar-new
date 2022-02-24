@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <img src="/lexar/logo.png" alt="" class="logo d-block mx-auto">
+  <div>
+    <!-- <img src="/lexar/logo.png" alt="" class="logo d-block mx-auto">
         <h2 class="title-project">Pembuatan Legal PT {{ dataProgress.nama_perseroan }}</h2>
 
         <h5 class="title-section">Proses Dokumen</h5>
@@ -376,326 +376,334 @@
             <b-table bordered :items="itemBadanPemegangSaham" :fields="fieldsBadanPemegangSaham"></b-table>
         </div>
 
-        <p class="footer">© 2019 LEXAR.</p>
-    </div>
+        <p class="footer">© 2019 LEXAR.</p> -->
+  </div>
 </template>
 
 <style lang="scss">
-    body{
-        background-color: #fff;
-    }
+body {
+  background-color: #fff;
+}
 
-    .logo{
-        width: 200px;
-    }
+.logo {
+  width: 200px;
+}
 
-    .title-project{
+.title-project {
+  color: #303030;
+  text-align: center;
+  margin: 20px 0 70px 0;
+  @media screen and (max-width: 767.98px) {
+    margin: 10px 0 35px 0;
+  }
+}
+
+.title-section {
+  margin: 0 0 20px 0;
+  @media screen and (max-width: 767.98px) {
+    margin: 0 0 10px 0;
+  }
+}
+
+.progress-list {
+  list-style: none;
+  padding: 0;
+  float: left;
+  width: 100%;
+  margin-bottom: 40px;
+  @media screen and (max-width: 767.98px) {
+    margin-bottom: 20px;
+  }
+  li {
+    position: relative;
+    float: left;
+    width: 14.2%;
+    margin: 0;
+    opacity: 0.5;
+    padding: 50px 0 0 0;
+    text-align: center;
+    @media screen and (max-width: 767.98px) {
+      float: none;
+      width: 100%;
+      padding: 10px 0 10px 50px;
+      text-align: left;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: #303030;
+      @media screen and (max-width: 767.98px) {
+        top: 0;
+        left: 10px;
+        right: auto;
+        bottom: 0;
+        height: auto;
+        width: 3px;
+      }
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 7px solid #fff;
+      background-color: #303030;
+      transform: translateX(-50%);
+      @media screen and (max-width: 767.98px) {
+        top: 50%;
+        left: -4px;
+        transform: translateY(-50%);
+      }
+    }
+    img {
+      width: 80px;
+      margin-bottom: 10px;
+      @media screen and (max-width: 767.98px) {
+        width: 60px;
+        display: inline-block;
+        margin: 0 10px 0 0;
+      }
+    }
+    h6 {
+      margin: 0;
+      @media screen and (max-width: 767.98px) {
+        display: inline-block;
+      }
+    }
+    &.active {
+      opacity: 1;
+      &:before {
+        opacity: 0.5;
+      }
+      &:after {
+        background-color: #bb815c;
+      }
+    }
+  }
+}
+
+.dokumen-list {
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+  margin-bottom: 20px;
+  @media screen and (max-width: 767.98px) {
+    margin-bottom: 10px;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+    height: 160px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid rgba($color: #303030, $alpha: 0.2);
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      right: 50%;
+      bottom: 50%;
+      opacity: 0;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      background-color: lighten(#bb815c, 5%);
+    }
+    .icon {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+    h6 {
+      margin: 0;
+      font-size: 15px;
+      color: #303030;
+    }
+    .download {
+      opacity: 0;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease;
+      img {
+        width: 30px;
+      }
+    }
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      &:before {
+        opacity: 0.95;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      h6 {
         color: #303030;
-        text-align: center;
-        margin: 20px 0 70px 0;
-        @media screen and (max-width: 767.98px){
-            margin: 10px 0 35px 0;
-        }
+      }
+      .download {
+        opacity: 1;
+        top: 50%;
+      }
     }
+  }
+}
 
-    .title-section{
-        margin: 0 0 20px 0;
-        @media screen and (max-width: 767.98px){
-            margin: 0 0 10px 0;
-        }
+.detail-matrix {
+  border: 1px solid rgba($color: #303030, $alpha: 0.2);
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 40px;
+  @media screen and (max-width: 767.98px) {
+    margin-bottom: 20px;
+  }
+  .detail-entry {
+    margin: 0 0 10px 0;
+    .detail-label {
+      font-size: 14px;
+      margin: 0;
+      display: block;
     }
+    .detail-content {
+      font-size: 14px;
+      display: block;
+      margin: 0;
+      font-weight: 600;
+    }
+  }
+}
 
-    .progress-list{
-        list-style: none;
-        padding: 0;
-        float: left;
-        width: 100%;
-        margin-bottom: 40px;
-        @media screen and (max-width: 767.98px){
-            margin-bottom: 20px;
+.table-overflow {
+  overflow-x: auto;
+  margin-bottom: 40px;
+  @media screen and (max-width: 767.98px) {
+    margin-bottom: 20px;
+  }
+  .table {
+    margin: 0;
+    thead {
+      tr {
+        th {
+          background-color: #f9f9f9;
+          font-size: 14px;
         }
-        li{
-            position: relative;
-            float: left;
-            width: 14.2%;
-            margin: 0;
-            opacity: 0.5;
-            padding: 50px 0 0 0;
-            text-align: center;
-            @media screen and (max-width: 767.98px){
-                float: none;
-                width: 100%;
-                padding: 10px 0 10px 50px;
-                text-align: left;
-            }
-            &:before{
-                content: "";
-                position: absolute;
-                top: 10px;
-                left: 0;
-                right: 0;
-                height: 3px;
-                background-color: #303030;
-                @media screen and (max-width: 767.98px){
-                    top: 0;
-                    left: 10px;
-                    right: auto;
-                    bottom: 0;
-                    height: auto;
-                    width: 3px;
-                }
-            }
-            &:after{
-                content: "";
-                position: absolute;
-                top: -3px;
-                left: 50%;
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                border: 7px solid #FFF;
-                background-color: #303030;
-                transform: translateX(-50%);
-                @media screen and (max-width: 767.98px){
-                    top: 50%;
-                    left: -4px;
-                    transform: translateY(-50%);
-                }
-            }
-            img{
-                width: 80px;
-                margin-bottom: 10px;
-                @media screen and (max-width: 767.98px){
-                    width: 60px;
-                    display: inline-block;
-                    margin: 0 10px 0 0;
-                }
-            }
-            h6{
-                margin: 0;
-                @media screen and (max-width: 767.98px){
-                    display: inline-block;
-                }
-            }
-            &.active{
-                opacity: 1;
-                &:before{
-                    opacity: 0.5;
-                }
-                &:after{
-                    background-color: #BB815C;
-                }
-            }
-        }
+      }
     }
+    tbody {
+      tr {
+        td {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
 
-    .dokumen-list{
-        padding: 0;
-        overflow: hidden;
-        list-style: none;
-        margin-bottom: 20px;
-        @media screen and (max-width: 767.98px){
-            margin-bottom: 10px;
-        }
-        a{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            margin-bottom: 20px;
-            height: 160px;
-            border-radius: 5px;
-            text-align: center;
-            border: 1px solid rgba($color: #303030, $alpha: 0.2);
-            &:before{
-                content: "";
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                right: 50%;
-                bottom: 50%;
-                opacity: 0;
-                border-radius: 5px;
-                transition: all 0.3s ease;
-                background-color: lighten(#BB815C, 5%);
-            }
-            .icon{
-                width: 60px;
-                margin-bottom: 15px;
-            }
-            h6{
-                margin: 0;
-                font-size: 15px;
-                color: #303030;
-            }
-            .download{
-                opacity: 0;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                background-color: #FFF;
-                padding: 15px;
-                border-radius: 50%;
-                transform: translate(-50%, -50%);
-                transition: all 0.3s ease;
-                img{
-                    width: 30px;
-                }
-            }
-            &:hover, &:focus{
-                text-decoration: none;
-                &:before{
-                    opacity: 0.95;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                }
-                h6{
-                    color: #303030;
-                }
-                .download{
-                    opacity: 1;
-                    top: 50%;
-                }
-            }
-        }
-    }
-
-    .detail-matrix{
-        border: 1px solid rgba($color: #303030, $alpha: 0.2);
-        border-radius: 5px;
-        padding: 15px;
-        margin-bottom: 40px;
-        @media screen and (max-width: 767.98px){
-            margin-bottom: 20px;
-        }
-        .detail-entry{
-            margin: 0 0 10px 0;
-            .detail-label{
-                font-size: 14px;
-                margin: 0;
-                display: block;
-            }
-            .detail-content{
-                font-size: 14px;
-                display: block;
-                margin: 0;
-                font-weight: 600;
-            }
-        }
-    }
-
-    .table-overflow{
-        overflow-x: auto;
-        margin-bottom: 40px;
-        @media screen and (max-width: 767.98px){
-            margin-bottom: 20px;
-        }
-        .table{
-            margin: 0;
-            thead{
-                tr{
-                    th{
-                        background-color: #F9F9F9;
-                        font-size: 14px;
-                    }
-                }
-            }
-            tbody{
-                tr{
-                    td{
-                        font-size: 14px;
-                    }
-                }
-            }
-        }
-    }
-
-    .footer{
-        margin: 15px 0;
-        font-size: 14px;
-        text-align: center;
-        color: rgba($color: #303030, $alpha: 0.5)
-    }
+.footer {
+  margin: 15px 0;
+  font-size: 14px;
+  text-align: center;
+  color: rgba($color: #303030, $alpha: 0.5);
+}
 </style>
 
 <script>
-import moment from 'moment';
+import moment from "moment";
 export default {
-    layout: "progress",
-    async asyncData({ app, route }){
-        let tempProgress = await app.$incorp.getProgress(route.params.id);
-        let tempProvince = await app.$profile.getCity(tempProgress.data.province_id);
-        let tempCity = await app.$profile.getDisctrict(tempProgress.data.city_id);
-        let tempDistrict = await app.$profile.getVillage(tempProgress.data.district_id);
-        let tempVillage = tempDistrict.data.detail.filter(function(el){
-            return el.id === Number(tempProgress.data.village_id);
-        })
+  layout: "progress",
+  // async asyncData({ app, route }){
+  //     let tempProgress = await app.$incorp.getProgress(route.params.id);
+  //     let tempProvince = await app.$profile.getCity(tempProgress.data.province_id);
+  //     let tempCity = await app.$profile.getDisctrict(tempProgress.data.city_id);
+  //     let tempDistrict = await app.$profile.getVillage(tempProgress.data.district_id);
+  //     let tempVillage = tempDistrict.data.detail.filter(function(el){
+  //         return el.id === Number(tempProgress.data.village_id);
+  //     })
 
-        return { 
-            dataProgress: tempProgress.data, 
-            dataProvince: tempProvince.data,
-            dataCity: tempCity.data,
-            dataDistrict: tempDistrict.data,
-            dataVillage: tempVillage,
-            itemPemegangSaham: tempProgress.data.saham,
-            itemPengurus: tempProgress.data.pengurus,
-        }
+  //     return {
+  //         dataProgress: tempProgress.data,
+  //         dataProvince: tempProvince.data,
+  //         dataCity: tempCity.data,
+  //         dataDistrict: tempDistrict.data,
+  //         dataVillage: tempVillage,
+  //         itemPemegangSaham: tempProgress.data.saham,
+  //         itemPengurus: tempProgress.data.pengurus,
+  //     }
+  // },
+  data() {
+    return {
+      dataProgress: "",
+      dataProvince: "",
+      dataCity: "",
+      dataDistrict: "",
+      dataVillage: "",
+      itemPemegangSaham: "",
+      itemPengurus: "",
+      fieldsBadanPemegangSaham: {
+        nama: {
+          label: "Nama",
+          sortable: true,
+        },
+        type_saham: {
+          label: "Tipe Saham",
+          sortable: true,
+        },
+        jumlah_saham: {
+          label: "Jumlah Saham",
+          sortable: true,
+        },
+      },
+      fieldsPengurus: {
+        nama: {
+          label: "Nama",
+          sortable: true,
+        },
+        jabatan: {
+          label: "Jabatan",
+          sortable: true,
+        },
+      },
+      itemBadanPemegangSaham: [
+        {
+          nama: "Joy Journey",
+          tipe_saham: "Lembar",
+          jumlah_saham: "200",
+          nominal_saham: "200.000.000",
+          persentasi: "80%",
+        },
+        {
+          nama: "Edan Tourney",
+          tipe_saham: "Lembar",
+          jumlah_saham: "50",
+          nominal_saham: "50.000.000",
+          persentasi: "20%",
+        },
+      ],
+    };
+  },
+  methods: {
+    moment: function () {
+      return moment();
     },
-    data(){
-        return{
-            dataProgress: "",
-            dataProvince: "",
-            dataCity: "",
-            dataDistrict: "",
-            dataVillage: "",
-            itemPemegangSaham: "",
-            itemPengurus: "",
-            fieldsBadanPemegangSaham: {
-                nama: {
-                    label: 'Nama',
-                    sortable: true
-                },
-                type_saham:{
-                    label: 'Tipe Saham',
-                    sortable: true
-                },
-                jumlah_saham:{
-                    label: 'Jumlah Saham',
-                    sortable: true
-                },
-            },
-            fieldsPengurus: {
-                nama:{
-                    label: 'Nama',
-                    sortable: true
-                },
-                jabatan:{
-                    label: 'Jabatan',
-                    sortable: true
-                }
-            },
-            itemBadanPemegangSaham: [
-                {
-                    nama: 'Joy Journey', tipe_saham: 'Lembar', jumlah_saham: '200', nominal_saham: '200.000.000', persentasi: '80%'
-                },
-                {
-                    nama: 'Edan Tourney', tipe_saham: 'Lembar', jumlah_saham: '50', nominal_saham: '50.000.000', persentasi: '20%'
-                }
-            ],
-        }
+  },
+  filters: {
+    moment: function (date) {
+      return moment(date).format("DD MMM YYYY");
     },
-    methods: {
-        moment: function () {
-            return moment();
-        }
-    },
-    filters: {
-        moment: function (date) {
-            return moment(date).format('DD MMM YYYY');
-        }
-    }
-}
+  },
+};
 </script>
-
