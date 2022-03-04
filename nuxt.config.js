@@ -51,13 +51,13 @@ module.exports = {
       }
     ],
     script: [
-      {
-        src: '//js.hs-scripts.com/7011038.js',
-        id: 'hs-script-loader',
-        type: 'text/javascript',
-        async: true,
-        defer: true
-      },
+      // {
+      //   src: '//js.hs-scripts.com/7011038.js',
+      //   id: 'hs-script-loader',
+      //   type: 'text/javascript',
+      //   async: true,
+      //   defer: true
+      // },
       {
         src: 'https://www.googletagmanager.com/gtag/js?id=UA-66126363-3',
         type: 'text/javascript',

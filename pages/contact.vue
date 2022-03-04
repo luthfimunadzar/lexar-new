@@ -1,25 +1,41 @@
 <template>
-    <div>
-        <!-- Hero Inner -->
-        <div class="inner-hero" style="background-image: url('/lexar/bg-4.jpg');">
-            <b-container>
-                <b-row>
-                    <b-col>
-                        <h3>{{ $t('contactTitle') }}</h3>
-                        <h5>{{ $t('contactSubTitle') }}</h5>
-                    </b-col>
-                </b-row>
-            </b-container>
-        </div>
+  <div>
+    <!-- Hero Inner -->
+    <div class="inner-hero" style="background-image: url('/lexar/bg-4.jpg')">
+      <b-container>
+        <b-row>
+          <b-col>
+            <h3>{{ $t("contactTitle") }}</h3>
+            <h5>{{ $t("contactSubTitle") }}</h5>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
 
-        <!-- Contact Form -->
-        <div class="contact white-panel">
-            <b-container>
-                <b-row>
-                    <b-col md="8" offset-md="2">
-                       <h4>{{ $t('contactForm') }}</h4>
+    <!-- Contact Form -->
+    <div class="contact white-panel">
+      <b-container>
+        <b-row>
+          <b-col md="8" offset-md="2">
+            <h4>Contact Us</h4>
+            <p class="mb-4">
+              For any service inquiries or and questions, lets chat with us
+              directly
+            </p>
+            <a
+              class="btn btn-success py-2 px-4"
+              href="https://api.whatsapp.com/send?phone=6285892824010?text=Saya%20ingin%20bertanya%20tentang%20..."
+              target="_blank"
+              ><img
+                src="/lexar/whatsapp.png"
+                width="20px"
+                class="mr-1"
+                alt=""
+              />
+              Whatsapp</a
+            >
 
-                        <b-form>
+            <!-- <b-form>
                             <b-row>
                                 <b-col md="6">
                                     <b-form-group
@@ -84,31 +100,29 @@
                                     <b-button variant="primary" @click="onSubmit">{{ $t('submit') }}</b-button>
                                 </b-col>
                             </b-row>
-                        </b-form> 
+                        </b-form>  -->
 
-                        
-                        <h4 class="mt-5">{{ $t('mailingAddress') }}</h4>
+            <h4 class="mt-5">{{ $t("mailingAddress") }}</h4>
 
-                        <p>
-                            <b>Domisili.id Building</b> <br/>
-                            Jalan Wahid Hasyim No. 10D, Kel. Kebon Sirih, Kec. Menteng, Jakarta Pusat, 10340
-                        </p>
+            <p>
+              <b>Domisili.id Building</b> <br />
+              Jalan Wahid Hasyim No. 10D, Kel. Kebon Sirih, Kec. Menteng,
+              Jakarta Pusat, 10340
+            </p>
+          </b-col>
+        </b-row>
+      </b-container>
 
-                    </b-col>
-                </b-row>
-            </b-container>
- 
-            <GmapMap
-            :center="{lat:-6.184111, lng:106.832624}"
-            :zoom="16"
-            map-type-id="terrain"
-            style="width: 100%; height: 300px"
-            >
-                <GmapMarker  :position="{lat:-6.184047, lng:106.833394}"
-            />
-            </GmapMap>
-        </div>
+      <GmapMap
+        :center="{ lat: -6.184111, lng: 106.832624 }"
+        :zoom="16"
+        map-type-id="terrain"
+        style="width: 100%; height: 300px"
+      >
+        <GmapMarker :position="{ lat: -6.184047, lng: 106.833394 }" />
+      </GmapMap>
     </div>
+  </div>
 </template>
 
 <script>
@@ -122,21 +136,29 @@ export default {
         name: "",
         email: "",
         subject: "",
-        message: ""
+        message: "",
       },
     };
   },
-    head () {
-        return {
-            title: 'Contact | LEXAR',
-            meta: [
-                // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-                { hid: 'description', name: 'description', content: 'Ready to Work with us? We are here to help ease your work' },
-                { hid: 'og:title', name: 'og:title', content: 'Contact | LEXAR' },
-                { hid: 'og:description', name: 'og:description', content: 'Ready to Work with us? We are here to help ease your work' },
-            ]
-        }
-    },
+  head() {
+    return {
+      title: "Contact | LEXAR",
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "description",
+          name: "description",
+          content: "Ready to Work with us? We are here to help ease your work",
+        },
+        { hid: "og:title", name: "og:title", content: "Contact | LEXAR" },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: "Ready to Work with us? We are here to help ease your work",
+        },
+      ],
+    };
+  },
   methods: {
     async onSubmit() {
       const validated = await this.$validator.validateAll();
@@ -144,16 +166,16 @@ export default {
 
       if (validated) {
         try {
-        //   const contactRequest = await this.$contact.send(this.form);
-          
+          //   const contactRequest = await this.$contact.send(this.form);
+
           this.form.name = "";
           this.form.email = "";
           this.form.subject = "";
           this.form.message = "";
 
-          this.$validator.reset()
+          this.$validator.reset();
 
-          console.log('berhasil!');
+          console.log("berhasil!");
 
           document.getElementById("alertSuccess").classList.remove("d-none");
         } catch (error) {
@@ -162,7 +184,7 @@ export default {
           document.getElementById("alertError").classList.remove("d-none");
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
