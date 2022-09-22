@@ -43,7 +43,7 @@
                     <b-col cols="6" md="6">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>9<span>{{
+                        <span class="top">IDR</span>9.5<span>{{
                           $t("million")
                         }}</span>
                       </h4>
@@ -59,7 +59,7 @@
                     <b-col cols="6" md="6">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>10<span>{{
+                        <span class="top">IDR</span>10.5<span>{{
                           $t("million")
                         }}</span>
                       </h4>
@@ -214,7 +214,7 @@
                     <b-col cols="6" md="5">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>2<span>{{
+                        <span class="top">IDR</span>3<span>{{
                           $t("million")
                         }}</span>
                       </h4>
@@ -230,7 +230,7 @@
                     <b-col cols="6" md="5">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>2.5<span>{{
+                        <span class="top">IDR</span>3.5<span>{{
                           $t("million")
                         }}</span>
                       </h4>
@@ -246,7 +246,7 @@
                     <b-col cols="6" md="5">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>3.5<span>{{
+                        <span class="top">IDR</span>4.5<span>{{
                           $t("million")
                         }}</span>
                       </h4>
@@ -262,7 +262,7 @@
                     <b-col cols="6" md="5">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>4<span>{{
+                        <span class="top">IDR</span>5<span>{{
                           $t("million")
                         }}</span>
                       </h4>
@@ -391,7 +391,7 @@
                   </b-row>
                 </div>
               </b-collapse>
-              <button
+              <!-- <button
                 class="btn btn-outline-primary float-left collapsed toggle-collapse"
                 @click="toggleMore4"
                 v-if="!openColExpatriate"
@@ -400,7 +400,7 @@
                 <span v-if="moreService4">{{ $t("seeMore") }}</span
                 ><span v-else>{{ $t("seeLess") }}</span>
                 <i class="fa fa-angle-up"></i>
-              </button>
+              </button> -->
 
               <nuxt-link class="btn btn-secondary float-right" to="/contact">{{
                 $t("inquire")
@@ -428,7 +428,7 @@
                     <b-col cols="6" md="6">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>3.5<span
+                        <span class="top">IDR</span>3.9<span
                           >{{ $t("million") }} {{ $t("perClass") }}</span
                         >
                       </h4>
@@ -443,7 +443,7 @@
                     <b-col cols="6" md="7">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>2.5<span>{{
+                        <span class="top">IDR</span>5<span>{{
                           $t("million")
                         }}</span>
                       </h4>
@@ -567,28 +567,11 @@
                   <b-row>
                     <b-col cols="6" md="7">
                       <h5>{{ $t("service6Item3") }}</h5>
-                      <h6>{{ $t("service6SubItem3") }}</h6>
                     </b-col>
                     <b-col cols="6" md="5">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>5<span>{{
-                          $t("million")
-                        }}</span>
-                      </h4>
-                    </b-col>
-                  </b-row>
-                </div>
-                <div class="price">
-                  <b-row>
-                    <b-col cols="6" md="7">
-                      <h5>{{ $t("service6Item4") }}</h5>
-                      <h6>{{ $t("service6SubItem4") }}</h6>
-                    </b-col>
-                    <b-col cols="6" md="5">
-                      <h4>
-                        <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>6.6<span>{{
+                        <span class="top">IDR</span>9<span>{{
                           $t("million")
                         }}</span>
                       </h4>
@@ -618,7 +601,7 @@
                     <b-col cols="6" md="6">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>1<span>{{
+                        <span class="top">IDR</span>2<span>{{
                           $t("million")
                         }}</span>
                       </h4>
@@ -633,8 +616,8 @@
                     <b-col cols="6" md="6">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>300<span>{{
-                          $t("thousand")
+                        <span class="top">IDR</span>1<span>{{
+                          $t("million")
                         }}</span>
                       </h4>
                     </b-col>
@@ -720,28 +703,11 @@
                   <b-row>
                     <b-col cols="6" md="7">
                       <h5>{{ $t("service7Item2") }}</h5>
-                      <h6>{{ $t("service7SubItem2") }}</h6>
                     </b-col>
                     <b-col cols="6" md="5">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>5<span>{{
-                          $t("million")
-                        }}</span>
-                      </h4>
-                    </b-col>
-                  </b-row>
-                </div>
-                <div class="price">
-                  <b-row>
-                    <b-col cols="6" md="7">
-                      <h5>{{ $t("service7Item3") }}</h5>
-                      <h6>{{ $t("service7SubItem3") }}</h6>
-                    </b-col>
-                    <b-col cols="6" md="5">
-                      <h4>
-                        <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>5<span>{{
+                        <span class="top">IDR</span>8<span>{{
                           $t("million")
                         }}</span>
                       </h4>
@@ -756,7 +722,7 @@
                     <b-col cols="6" md="5">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>5<span>{{
+                        <span class="top">IDR</span>8<span>{{
                           $t("million")
                         }}</span>
                       </h4>
@@ -771,7 +737,7 @@
                     <b-col cols="6" md="5">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>5<span>{{
+                        <span class="top">IDR</span>8<span>{{
                           $t("million")
                         }}</span>
                       </h4>
@@ -786,7 +752,7 @@
                     <b-col cols="6" md="6">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>5<span>{{
+                        <span class="top">IDR</span>8<span>{{
                           $t("million")
                         }}</span>
                       </h4>
@@ -896,7 +862,7 @@
                     <b-col cols="6" md="5">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">IDR</span>5<span>{{
+                        <span class="top">IDR</span>7.5<span>{{
                           $t("million")
                         }}</span>
                       </h4>
@@ -912,7 +878,7 @@
                     <b-col cols="6" md="6">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">USD</span>1500<span>{{
+                        <span class="top">USD</span>1800<span>{{
                           $t("equivalent")
                         }}</span>
                       </h4>
@@ -927,7 +893,7 @@
                     <b-col cols="6" md="6">
                       <h4>
                         <span>{{ $t("startFrom") }}</span>
-                        <span class="top">USD</span>1000<span>{{
+                        <span class="top">USD</span>1200<span>{{
                           $t("equivalent")
                         }}</span>
                       </h4>

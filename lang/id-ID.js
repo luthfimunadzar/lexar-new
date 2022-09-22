@@ -150,12 +150,12 @@ export default (context) => {
 			"startPriceService3": `Mulai dari <b>IDR 1 Juta</b>`,
 
 			"serviceTitle4": "Bantuan Ekspatriat",
-			"serviceSubTitle4": "Kami membantu Anda untuk bekerja di Indonesia, dari mulai kedatangan, hingga mendapatkan izin kerja yang diperlukan. * tidak termasuk PNBP dan Biaya Telex",
+			"serviceSubTitle4": "Paket Izin Kerja (Terdiri dari WLK, RPTKA, IMTA, dan KITAS)",
 			"service4Item1": "Izin Ekspatriat Perusahaan",
 			"service4Item2": "Izin Tinggal Sementara Orang Asing",
 			"service4Item3": "Lisensi Ekspatriat Lengkap",
 			"service4SubItem3": "Perusahaan + 1 Pekerja",
-			"startPriceService4": `Mulai dari <b>IDR 3 Juta</b>`,
+			"startPriceService4": `Mulai dari <b>IDR 20 Juta</b>`,
 
 			"serviceTitle5": "Perlindungan Hak Kekayaan Intelektual (HAKI)",
 			"serviceSubTitle5": "Kami dapat melindungi merek, naskah, hasil kesenian, atau aset tidak berwujud lainnya. Kami mendorong setiap perusahaan untuk pertama-tama mendaftarkan merek.",

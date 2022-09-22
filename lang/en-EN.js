@@ -153,12 +153,12 @@ export default (context) => {
 			"startPriceService3": `Start From <b>IDR 1 Million</b>`,
 
 			"serviceTitle4": "Expatriate Services",
-			"serviceSubTitle4": "We take care of foreigner intends to work in Indonesia, starting from their  arrival until securing their necessary work license. *exclude PNBP and Telex Fee",
+			"serviceSubTitle4": "Paket Izin Kerja (Terdiri dari WLK, RPTKA, IMTA, dan KITAS)",
 			"service4Item1": "Company Expatriate Licenses",
 			"service4Item2": "Expatriate Temporary Living License",
 			"service4Item3": "Complete Expatriate License",
 			"service4SubItem3": "Company + 1 Worker",
-			"startPriceService4": `Start From <b>IDR 3 Million</b>`,
+			"startPriceService4": `Start From <b>IDR 20 Million</b>`,
 
 			"serviceTitle5": "Intellectual Property Protection",
 			"serviceSubTitle5": "Whether it’s brand, invention, script, art, or any intangible assets form, we got you cover to secure those valuable matters. We encourage every company  to at least secured their trademark, and the rest will go on.",
