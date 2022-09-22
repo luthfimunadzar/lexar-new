@@ -153,7 +153,7 @@ export default (context) => {
 			"startPriceService3": `Start From <b>IDR 1 Million</b>`,
 
 			"serviceTitle4": "Expatriate Services",
-			"serviceSubTitle4": "Paket Izin Kerja (Terdiri dari WLK, RPTKA, IMTA, dan KITAS)",
+			"serviceSubTitle4": "Work Permit Package (Consist of WLK, RPTKA, IMTA, and KITAS)",
 			"service4Item1": "Company Expatriate Licenses",
 			"service4Item2": "Expatriate Temporary Living License",
 			"service4Item3": "Complete Expatriate License",
